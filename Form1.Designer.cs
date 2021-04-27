@@ -39,6 +39,10 @@ namespace CosmeticBarts
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +52,7 @@ namespace CosmeticBarts
             this.manufacturerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.programBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -58,7 +63,7 @@ namespace CosmeticBarts
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(230, 352);
+            this.button1.Location = new System.Drawing.Point(77, 469);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 45);
             this.button1.TabIndex = 0;
@@ -69,7 +74,7 @@ namespace CosmeticBarts
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(364, 352);
+            this.button2.Location = new System.Drawing.Point(400, 469);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(128, 45);
             this.button2.TabIndex = 0;
@@ -80,7 +85,7 @@ namespace CosmeticBarts
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(498, 352);
+            this.button3.Location = new System.Drawing.Point(694, 469);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(128, 45);
             this.button3.TabIndex = 0;
@@ -101,7 +106,7 @@ namespace CosmeticBarts
             this.isActiveDataGridViewCheckBoxColumn,
             this.manufacturerIDDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.productBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(28, 106);
+            this.dataGridView1.Location = new System.Drawing.Point(77, 223);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(745, 240);
             this.dataGridView1.TabIndex = 1;
@@ -115,7 +120,7 @@ namespace CosmeticBarts
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 100);
+            this.panel1.Size = new System.Drawing.Size(927, 100);
             this.panel1.TabIndex = 2;
             // 
             // label1
@@ -141,13 +146,46 @@ namespace CosmeticBarts
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button4.Location = new System.Drawing.Point(364, 403);
+            this.button4.Location = new System.Drawing.Point(400, 542);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(128, 45);
             this.button4.TabIndex = 0;
             this.button4.Text = "Закрыть";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button5.Location = new System.Drawing.Point(77, 117);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(401, 31);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "Сортировать по возрастанию цены";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button6.Location = new System.Drawing.Point(599, 117);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(223, 31);
+            this.button6.TabIndex = 4;
+            this.button6.Text = "Исходные данные";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button7
+            // 
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button7.Location = new System.Drawing.Point(77, 154);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(401, 31);
+            this.button7.TabIndex = 5;
+            this.button7.Text = "Сортировать по убыванию цены";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -199,11 +237,30 @@ namespace CosmeticBarts
             // 
             this.programBindingSource.DataSource = typeof(CosmeticBarts.Program);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productBindingSource, "ID", true));
+            this.comboBox1.DataSource = this.productBindingSource;
+            this.comboBox1.DisplayMember = "ID";
+            this.comboBox1.ForeColor = System.Drawing.Color.Yellow;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(701, 163);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 6;
+            this.comboBox1.UseWaitCursor = true;
+            this.comboBox1.ValueMember = "ID";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(927, 596);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button4);
@@ -242,6 +299,11 @@ namespace CosmeticBarts
         private System.Windows.Forms.DataGridViewCheckBoxColumn isActiveDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn manufacturerIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 

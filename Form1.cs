@@ -78,5 +78,60 @@ namespace CosmeticBarts
             }
             productBindingSource.DataSource = db.Product.ToList();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            List <Product> prod = (List <Product>)productBindingSource.List;
+            prod.Sort(ProdPriceSort);
+            productBindingSource.DataSource = prod;
+        }
+        int ProdPriceSort(Product prd1, Product prd2)
+        {
+            if (prd1.Cost < prd2.Cost)
+            {
+                return -1;
+            }
+            else if (prd1.Cost == prd2.Cost)
+            {
+                return 0;
+            }
+            else
+            {
+                return 1;
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            productBindingSource.DataSource = null;
+            productBindingSource.DataSource = db.Product.ToList<Product>();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            List<Product> prod = (List<Product>)productBindingSource.List;
+            prod.Sort(ProdPriceSortM);
+            productBindingSource.DataSource = prod;
+        }
+        int ProdPriceSortM(Product prd1, Product prd2)
+        {
+            if (prd1.Cost < prd2.Cost)
+            {
+                return 1;
+            }
+            else if (prd1.Cost == prd2.Cost)
+            {
+                return 0;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
