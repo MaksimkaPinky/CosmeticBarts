@@ -30,6 +30,11 @@ namespace CosmeticBarts
 
         public bool IsActive { get; set; }
 
+        internal bool IsActive()
+        {
+            throw new NotImplementedException();
+        }
+
         public int? ManufacturerID { get; set; }
 
         public virtual Manufacturer Manufacturer { get; set; }
