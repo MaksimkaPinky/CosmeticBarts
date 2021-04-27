@@ -30,7 +30,7 @@ namespace CosmeticBarts
             textBox2.Text = pr.Cost.ToString();
             textBox3.Text = pr.Description;
             textBox5.Text = pr.ManufacturerID.ToString();
-            checkBox1.Checked = pr.IsActive();
+            checkBox1.Checked = pr.IsActive;
         }
 
         private void button1_Click(object sender, EventArgs e)

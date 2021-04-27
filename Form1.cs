@@ -74,7 +74,7 @@ namespace CosmeticBarts
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.InnerException.InnerException.Message);
             }
             productBindingSource.DataSource = db.Product.ToList();
         }
